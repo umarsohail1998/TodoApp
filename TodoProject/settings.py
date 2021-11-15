@@ -26,7 +26,8 @@ SECRET_KEY = 'a-s*(-s1yxh$_vf^7@)=!(m1kf(g1na)m!hc%cykjvlyyp)((='
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    '.herokuapp.com',
     'https://todoapp-bawa.herokuapp.com/'
     ]
 # Application definition

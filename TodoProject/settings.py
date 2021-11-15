@@ -85,9 +85,16 @@ WSGI_APPLICATION = 'TodoProject.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd81vekmuphcmc9',
+        'USER':'xfusedlccevwvw',
+        'PASSWORD':'b30fdd6ee473850343d8017f5ef2a21da6dd0fb91c9732c10720d96dca6d8b4b',
+        'HOST':'ec2-3-221-243-122.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
 }
-
+postgres://xfusedlccevwvw:b30fdd6ee473850343d8017f5ef2a21da6dd0fb91c9732c10720d96dca6d8b4b@ec2-3-221-243-122.compute-1.amazonaws.com:5432/d81vekmuphcmc9
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 

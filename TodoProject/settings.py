@@ -25,11 +25,7 @@ SECRET_KEY = 'a-s*(-s1yxh$_vf^7@)=!(m1kf(g1na)m!hc%cykjvlyyp)((='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    '.herokuapp.com',
-    'https://todoapp-bawa.herokuapp.com/'
-    ]
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com','todoapp-bawa.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,7 +79,8 @@ DATABASES = {
         'NAME': 'TodoDB',
         'USER':'postgres',
         'PASSWORD':'root',
-        'HOST':'localhost'
+        'HOST':'localhost',
+        'PORT': '5432',
     }
 }
 

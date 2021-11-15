@@ -25,9 +25,10 @@ SECRET_KEY = 'a-s*(-s1yxh$_vf^7@)=!(m1kf(g1na)m!hc%cykjvlyyp)((='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://todoapp-bawa.herokuapp.com/']
-
-
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    'todoapp-bawa.herokuapp.com'
+    ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,3 +124,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

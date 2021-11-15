@@ -13,7 +13,6 @@ def index(request):
     return HttpResponse("Index Page")
 
 # Create your views here.
-
 def list_todo_items(request):
     if request.user.is_authenticated:
         # return HttpResponseRedirect('/profile/')

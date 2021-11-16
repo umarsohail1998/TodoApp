@@ -19,3 +19,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Django==3.2.9
+# FROM django
+# WORKDIR /TODOPROJECT/
+# COPY . /TODOPROJECT/
+# RUN pip install -r requirements.txt
+# CMD [ "python" "manage.py" "runserver" ]

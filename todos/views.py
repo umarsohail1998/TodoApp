@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpRequest,HttpResponseRedirect
+from django.http import HttpResponse, HttpRequest,HttpResponseRedirect, JsonResponse
 from .models import Todo
 
 from django.contrib.auth.forms import UserCreationForm
@@ -7,7 +7,27 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+import json
 # Create your views here.
+
+def owner(request):
+    if request.user.is_authenticated and request.user.is_superuser:
+        data = list(Todo.objects.all().values('username', 'content', 'status')) 
+        # print(data)
+        
+        dt = {}
+        for x in data:
+            try:
+                if dt.__contains__(x["username"]):
+                    dt[x["username"]].append({'status': x["status"], 'content': x["content"]}) 
+                else:
+                    dt[x["username"]] = []
+                    dt[x["username"]].append({'status': x["status"], 'content': x["content"]}) 
+            except Exception as e:
+                print(e)
+        print(dt)
+        return JsonResponse(dt)
+    return HttpResponse("Not have a permission")
 
 def index(request):
     return HttpResponse("Index Page")
